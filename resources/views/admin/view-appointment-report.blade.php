@@ -46,21 +46,20 @@ Admin Dashboard
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Sr. No.</th>
+                                <th>Sr. No.</th>
                                     <th>ID</th>
-                                    <th>Name</th>
+                                    <th>Crew Name</th>
                                     <th>Maid</th>
                                     <th>Date</th>
-                                    <th>Time(FROM)</th>
-                                    <th>Time(To)</th>
+                                    <th>Start Time</th>
+                                    <th>Stop Time</th>
                                     <th>Hours</th>
-                                    <th>Material</th>
+                                    <th>Materials</th>
                                     <th>Address</th>
-                                    
-                                    <th>Amount</th>
                                     <th>Payment Method</th>
+                                    <th>Amount</th>
                                     <th>Status</th>
-                                   <th>Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,7 +81,7 @@ Admin Dashboard
                                     <td>{{ $appointment->c_stay_hours }}</td>
                                     <td>{{ $appointment->c_material }}</td>
                                     <td>{{ $appointment->address }}</td>
-                                    <td>{{ $appointment->amount }}</td>
+                                    <td>{{ $appointment->amount }}</td>amount
                                     <td>{{ $appointment->pay_method }}</td>
                                     <td>{{ $appointment->status }}</td>
                                     <td>

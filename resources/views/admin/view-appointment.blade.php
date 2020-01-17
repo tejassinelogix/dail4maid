@@ -47,13 +47,13 @@ Admin Dashboard
                                 <tr>
                                     <th>Sr. No.</th>
                                     <th>ID</th>
-                                    <th>Name</th>
+                                    <th>Crew Name</th>
                                     <th>Maid</th>
                                     <th>Date</th>
-                                    <th>Time(FROM)</th>
-                                    <th>Time(To)</th>
+                                    <th>Start Time</th>
+                                    <th>Stop Time</th>
                                     <th>Hours</th>
-                                    <th>Material</th>
+                                    <th>Materials</th>
                                     <th>Address</th>
                                     <th>Payment Method</th>
                                     <th>Amount</th>
@@ -80,16 +80,17 @@ Admin Dashboard
                                     <td>{{ $appointment->c_stay_hours }}</td>
                                     <td>{{ $appointment->c_material }}</td>
                                     <td>{{ $appointment->address }}</td>
-                                    <td>{{ $appointment->amount }}</td>
                                     <td>{{ $appointment->pay_method }}</td>
+                                    <td>{{ $appointment->amount }}</td>
                                     <td>{{ $appointment->status }}
 
                                         <form action="{{ route('admin.update-status') }}" id="update" method="post">
                                             {{csrf_field()}}
                                             <select name="apt_status">
-                                                <option value="Pending">Pending</option>
+                                                <option value="Pending">Pending / Paid</option>
                                                 <option value="Processed">Processed</option>
                                                 <option value="Completed">Completed</option>
+                                                <option value="Instructions">Instructions</option>
                                             </select>
                                             <input type="hidden" name="apt_id" value="{{ $appointment->id }}">
                                             <button type="submit" class="btn btn-primary">Update</button>
