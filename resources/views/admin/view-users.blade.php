@@ -5,7 +5,6 @@ Admin Dashboard
 @endsection
 
 @section('content')
-        
         <!-- All Product -->
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -37,7 +36,9 @@ Admin Dashboard
                             <strong class="card-title">Customers List</strong>
                         </div>
                         <div class="card-body">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                            <div id="filtter" class="col-md-3">
+                            </div>
+                            <table id="user-table" class="table table-striped table-bordered ">
                                 <thead>
                                     <tr>
                                         <th>Sr. No.</th>
@@ -46,6 +47,8 @@ Admin Dashboard
                                         <th>Date</th>
                                         <th>Contact</th>
                                         <th>Address</th>
+                                        <th>Code</th>
+                                        <th>Service</th>
                                         <th>Operations</th>
                                     </tr>
                                 </thead>
@@ -59,20 +62,31 @@ Admin Dashboard
                                         <td>{{ $user->created_at }}</td>
                                         <td>{{ $user->contact }}</td>
                                         <td>{{ $user->address }}</td>
+                                        <td>{{ $user->code }}</td>
+                                        <td>{{ $user->service }}</td>
                                         <td>
                                             <div class="operationsblok">
                                                 <a href="update-user/{{ $user->id }}" data-toggle="tooltip" title="Edit">
                                                     <i class="fa fa-pencil"></i>
-                                                </a>                                                
+                                                </a>
                                                 <a href="delete-user/{{ $user->id }}" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure to Delete User?');" >
                                                         <i class="fa  fa-trash-o"></i>
                                                 </a>
                                             </div>
                                         </td>
                                     </tr>
-                                    @endforeach  
-                                                                       
+                                    @endforeach
+
                                 </tbody>
+                                <tfoot> <tr><th>Sr. No.</th>
+                                    <th>Client Name</th>
+                                    <th>Email</th>
+                                    <th>Date</th>
+                                    <th>Contact</th>
+                                    <th>Address</th>
+                                    <th>Code</th>
+                                    <th>Service</th>
+                                    <th>Operations</th></tr></tfoot>
                             </table>
                         </div>
                     </div>
@@ -81,5 +95,34 @@ Admin Dashboard
         </div><!-- .animated -->
     </div>
         <!-- All Product -->
+
+@endsection
+@section('scripts')
+<script>
+    $custom_config =  {
+        lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
+        initComplete: function () {
+            this.api().columns(7).every( function () {
+                var column = this;
+                var select = $('<select class="form-control"><option value="">All Service</option></select>')
+                    .appendTo( $("#filtter").empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+                column.data().unique().sort().each( function ( d, j ) {
+                    if(d != '')
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    };
+    $('#user-table').DataTable($custom_config);
+</script>
 
 @endsection

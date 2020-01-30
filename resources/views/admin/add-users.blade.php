@@ -5,7 +5,7 @@ Admin Dashboard
 @endsection
 
 @section('content')
-        
+
         <!-- All Product -->
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -31,7 +31,7 @@ Admin Dashboard
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-                <div class="col-md-12">                    
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                                 <strong class="card-title">{{ __('msg.Admin Dashboard') }}</strong>
@@ -42,7 +42,7 @@ Admin Dashboard
                                         {{ session('successMessage') }}
                                     </div>
                                 @endif
-                        
+
                         <div class="card-body">
                             <form method="POST" action="{{ route('admin.userCreate') }}">
                                 <!--<form action="" method="post" class="form-horizontal">-->
@@ -85,7 +85,7 @@ Admin Dashboard
                                         @endif
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                     <label for="address">{{ __('Address') }}</label>
@@ -117,15 +117,31 @@ Admin Dashboard
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                     </div>
                                 </div>
-                                
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                    <label for="code">{{ __('msg.code') }}</label>
+                                        <input id="code" type="text" class="form-control" name="code" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                    <label for="service">{{ __('msg.service') }}</label>
+                                        <select id="service" name="service" class="form-control">
+                                            <option>Just Mope</option>
+                                            <option>Healthline</option>
+                                            <option>Care taker</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-12">
                                     <button type="submit" class="btn btn-primary pull-right">
                                         {{ __('msg.Register') }}
                                     </button>
                                 </div>
-                                                                    
+
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -133,5 +149,4 @@ Admin Dashboard
         </div><!-- .animated -->
     </div>
         <!-- All Product -->
-
 @endsection

@@ -47,6 +47,8 @@ return [
         'Save' => 'Save',
         'Cancel' => 'Cancel',
         'Email' => 'Email',
+    'code'=>'Code',
+    'service'=>'Service'
 
 ]
 

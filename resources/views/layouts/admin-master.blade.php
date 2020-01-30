@@ -25,7 +25,6 @@
 </head>
 <body>
     @include('partials.sidebar-admin')
-    
     <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
@@ -54,15 +53,11 @@
     <script src="{{ URL::to('public/backend/assets/js/lib/data-table/buttons.print.min.js') }}"></script>
     <script src="{{ URL::to('public/backend/assets/js/lib/data-table/buttons.colVis.min.js') }}"></script>
     <script src="{{ URL::to('public/backend/assets/js/lib/data-table/datatables-init.js') }}"></script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#bootstrap-data-table-export').DataTable();
-        });
-
-    </script>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#bootstrap-data-table-export').DataTable();
+    });
+</script>
 @yield('scripts')
 </body>
 </html>
