@@ -1,0 +1,1 @@
+ALTER TABLE `user_profiles`  ADD `service` VARCHAR(40) NULL DEFAULT NULL  AFTER `profile_img`,  ADD `code` VARCHAR(255) NULL DEFAULT NULL  AFTER `service`;

@@ -81,7 +81,7 @@ Admin Dashboard
                                     <td>{{ $appointment->c_stay_hours }}</td>
                                     <td>{{ $appointment->c_material }}</td>
                                     <td>{{ $appointment->address }}</td>
-                                    <td>{{ $appointment->amount }}</td>amount
+                                    <td>{{ $appointment->amount }}</td>
                                     <td>{{ $appointment->pay_method }}</td>
                                     <td>{{ $appointment->status }}</td>
                                     <td>

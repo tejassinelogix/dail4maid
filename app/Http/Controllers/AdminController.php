@@ -447,9 +447,7 @@ class AdminController extends Controller {
             'user_id' => $id,
             'token' => str_random(40)
             ]);
-
-
-            \Mail::to($user->email)->send(new VerifyMail($user));
+            // \Mail::to($user->email)->send(new VerifyMail($user));
             //return $user;
             return redirect()->back()->with('successMessage','Register successfully',['user' => $user]);
 

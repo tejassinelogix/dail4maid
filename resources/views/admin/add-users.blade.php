@@ -127,7 +127,7 @@ Admin Dashboard
                                     <div class="form-group">
                                     <label for="service">{{ __('msg.service') }}</label>
                                         <select id="service" name="service" class="form-control">
-                                            <option>Just Mope</option>
+                                            <option>JUSTMOP</option>
                                             <option>Healthline</option>
                                             <option>Care taker</option>
                                         </select>
