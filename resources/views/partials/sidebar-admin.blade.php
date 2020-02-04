@@ -40,10 +40,10 @@
                     </li>
                     
                     <li class="menu-item-has-children dropdown">
-                        <a href="users.php" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-users"></i> Users</a>
+                        <a href="users.php" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-users"></i> Clients</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-list-ul"></i><a href="{{ route('admin.view-users') }}"> All Users</a></li>
-                            <li><i class="fa fa-plus-square"></i><a href="{{ route('admin.add-users') }}"> Add New User</a></li>
+                            <li><i class="fa fa-list-ul"></i><a href="{{ route('admin.view-users') }}"> All Clients</a></li>
+                            <li><i class="fa fa-plus-square"></i><a href="{{ route('admin.add-users') }}"> Add New Client</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">

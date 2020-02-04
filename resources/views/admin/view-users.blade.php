@@ -33,7 +33,7 @@ Admin Dashboard
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Customers List</strong>
+                            <strong class="card-title">Clients List</strong>
                         </div>
                         <div class="card-body">
                             <div id="filtter" class="col-md-3">
@@ -42,7 +42,7 @@ Admin Dashboard
                                 <thead>
                                     <tr>
                                         <th>Sr. No.</th>
-                                        <th>Client Name</th>
+                                        <th>Name</th>
                                         <th>Email</th>
                                         <th>Date</th>
                                         <th>Contact</th>
