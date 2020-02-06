@@ -35,21 +35,21 @@
                         </div>
                         <!-- <div class="panel-body"> -->
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="appoinment_report" border="1">
                                     <thead>
                                         <tr>
-                                            <th>Sr. No.</th>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Maid</th>
-                                            <th>Date</th>
-                                            <th>Time (FROM-To)</th>
-                                            <th>Hours</th>
-                                            <th>Material</th>
-                                            <th>Address</th>
-                                            <th>Amt</th>
-                                            <th>Pay Method</th>
-                                            <th>Status</th>
+                                    <th>Crew Name</th>                                                                        
+                                    <th>Start Time</th>
+                                    <th>Stop Time</th>
+                                    <th>Hours</th>
+                                    <th>Code</th>
+                                    <th>Materials</th>
+                                    <th>Customer Name</th>
+                                    <th>Address</th>
+                                    <th>Payment Method</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Instruction</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -60,25 +60,18 @@
                                     // print_r($appointments);
                                      foreach($appointments as $appointment) {?>
                                         <tr>
-                                         <td class="srNo"><?php echo $i++ ; ?></td>
-                                    <td><?php echo $appointment->id ; ?></td>
-                                    <td><?php echo $appointment->name ; ?></td>
-                                    <td>
-                                    <?php 
-                                    // $m_id = $appointment->maid_id;
-                                    foreach ($maid_data as $maid) {
-                                    if( $maid->id == $appointment->maid_id)  { ?>
-                                       <?php echo $maid->name ; ?>
-                                    <?php } } ?>
-                                    </td>
-                                    <td><?php echo $appointment->c_date ; ?></td>
-                                    <td><?php echo $appointment->c_from_time_slot ; ?>-<?php echo $appointment->c_to_time_slot ; ?></td>
-                                    <td><?php echo $appointment->c_stay_hours ; ?></td>
-                                    <td><?php echo $appointment->c_material ; ?></td>
-                                    <td><?php echo $appointment->address ; ?></td>
-                                    <td><?php echo $appointment->amount ; ?></td>
-                                    <td><?php echo $appointment->pay_method ; ?></td>
-                                    <td><?php echo $appointment->status ; ?></td>
+                                    <td><?php echo $appointment->name ; ?></td> 
+                                    <td>{{ $appointment->c_from_time_slot }}</td>
+                                    <td>{{ $appointment->c_to_time_slot }}</td>   
+                                    <td>{{ $appointment->c_stay_hours }}</td> 
+                                    <td></td>
+                                    <td>{{ $appointment->c_material }}</td>                                    
+                                    <td></td>
+                                    <td>{{ $appointment->address }}</td>
+                                    <td>{{ $appointment->pay_method }}</td>
+                                    <td>{{ $appointment->amount }}</td>
+                                    <td>{{ $appointment->status }}    
+                                    <td></td>
                                 </tr>
                                     <?php }?>    
                                         

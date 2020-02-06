@@ -46,44 +46,37 @@ Admin Dashboard
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                <th>Sr. No.</th>
-                                    <th>ID</th>
                                     <th>Crew Name</th>
-                                    <th>Maid</th>
-                                    <th>Date</th>
                                     <th>Start Time</th>
                                     <th>Stop Time</th>
                                     <th>Hours</th>
+                                    <th>Code</th>
                                     <th>Materials</th>
+                                    <th>Customer Name</th>
                                     <th>Address</th>
                                     <th>Payment Method</th>
                                     <th>Amount</th>
                                     <th>Status</th>
+                                    <th>Instruction</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
                                 @foreach ($appointments as $appointment)
-                                <tr>
-                                    <td class="srNo">{{ $i++ }}</td>
-                                    <td>{{ $appointment->id }}</td>
+                                <tr>                                    
                                     <td>{{ $appointment->name }}</td>
-                                    <td>
-                                    <?php foreach ($Maid as $maid) {
-                                    if( $maid->id == $appointment->maid_id) { ?>
-                                       {{ $maid->name }}
-                                    <?php } } ?>
-                                    </td>
-                                    <td>{{ $appointment->c_date }}</td>
                                     <td>{{ $appointment->c_from_time_slot }}</td>
                                     <td>{{ $appointment->c_to_time_slot }}</td>
                                     <td>{{ $appointment->c_stay_hours }}</td>
+                                    <td></td>
                                     <td>{{ $appointment->c_material }}</td>
+                                    <td></td>
                                     <td>{{ $appointment->address }}</td>
-                                    <td>{{ $appointment->amount }}</td>
                                     <td>{{ $appointment->pay_method }}</td>
+                                    <td>{{ $appointment->amount }}</td> 
                                     <td>{{ $appointment->status }}</td>
+                                    <td></td>
                                     <td>
                                         <div class="operationsblok">
                                             <a href="update-appointment/{{ $appointment->id }}" data-toggle="tooltip" title="Edit">

@@ -11,7 +11,7 @@ Admin Dashboard
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>{{ __('msg.Admin Dashboard') }}</h1>
+                        <h1>{{ __('msg.Client Details') }}</h1>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@ Admin Dashboard
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="index.html">Dashboard</a></li>
-                            <li class="active"><a href="#">{{ __('msg.Admin Dashboard') }}</a></li>
+                            <li class="active"><a href="#">{{ __('msg.Client Details') }}</a></li>
 
                         </ol>
                     </div>
@@ -34,7 +34,7 @@ Admin Dashboard
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                                <strong class="card-title">{{ __('msg.Admin Dashboard') }}</strong>
+                                <strong class="card-title">{{ __('msg.Client Details') }}</strong>
                             </div>
                             <div class="card-body card-block">
                                 @if (session('successMessage'))
@@ -50,7 +50,7 @@ Admin Dashboard
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                    <label for="name">{{ __('msg.Name') }}</label>
+                                    <label for="name">{{ __('msg.Client Name') }}</label>
                                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                         @if ($errors->has('name'))
@@ -75,7 +75,7 @@ Admin Dashboard
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                    <label for="contact">{{ __('Contact') }}</label>
+                                    <label for="contact">{{ __('msg.Phone Number') }}</label>
                                         <input id="contact" type="text" class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}" name="contact" value="{{ old('contact') }}" required autofocus>
 
                                         @if ($errors->has('contact'))
@@ -131,6 +131,37 @@ Admin Dashboard
                                             <option>Healthline</option>
                                             <option>Care taker</option>
                                         </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                    <label for="service">{{ __('msg.Client Type') }}</label>
+                                        <select id="client_type" name="client_type" class="form-control">
+                                            <option>Regular</option>
+                                            <option>New</option>                                            
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                    <label for="code">{{ __('msg.Source Of Call') }}</label>
+                                        <input id="source_of_call" type="text" class="form-control" name="source_of_call" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                    <label for="code">{{ __('msg.Crew Name') }}</label>
+                                        <input id="crew_name" type="text" class="form-control" name="crew_name" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                    <label for="code">{{ __('msg.Date') }}</label>
+                                        <input id="date" type="date" class="form-control" name="date" required>
                                     </div>
                                 </div>
 
